@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - CinemachineTarget
+  - Ground
+  - ReflectionStatic
+  - ManaLiquid
+  - FireLiquid
+  - MagicDetectionLiquid
+  - DarkVisionLiquid
+  - FireResistanceLiquid
+  - PoisonLiquid
+  - PoisonResistanceLiquid
+  - GoldStarLiquid
+  - GrowthLiquid
+  - SpeedLiquid
+  - CleanserLiquid
+  - WaterLiquid
+  - GlueLiquid
+  - Mouth
+  - Knife
+  - LilypadIngredient
+  - TongueTip
+  - MagicCoal
+  - ScalingStopper
+  - Coin
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Character
+  - Ground
+  - LiquidBall
+  - Ingredient
+  - Coin
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: MagicFire
+    uniqueID: 3352933231
+    locked: 0
