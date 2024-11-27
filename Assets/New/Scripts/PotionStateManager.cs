@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PotionStateManager : MonoBehaviour
 {
-    private Liquid liquid;
+    public Liquid liquid;
 
 
     private Material myMaterial;
 
     public float fillAmount;
 
-    public float amountThatFillsWithEveryBall = -0.1f;
+    public float amountThatFillsWithEveryBall = -0.05f;
+    public float amountThatReleasesWithEveryBall = 0.05f;
 
     public float redIncrement = 0.25f;
     public float greenIncrement = 0.25f;
     public float blueIncrement = 0.25f;
-    
+
 
 
 
@@ -40,7 +42,7 @@ public class PotionStateManager : MonoBehaviour
     public bool isPoisonResistancePotion = false;
     public bool isFireResistancePotion = false;
 
-    
+
 
 
 
@@ -50,16 +52,13 @@ public class PotionStateManager : MonoBehaviour
     {
         // Get a reference to the Liquid script on this object
         liquid = GetComponent<Liquid>();
-        if (liquid == null)
-        {
-            Debug.LogError("No Liquid component found on the same GameObject as PotionStateManager!");
-        }
+       
 
 
         fillAmount = liquid.fillAmount;
 
-        
-        
+
+
         Renderer renderer = GetComponent<Renderer>();
         myMaterial = renderer.material;
         Color color = myMaterial.GetColor("_Color");
@@ -87,7 +86,7 @@ public class PotionStateManager : MonoBehaviour
         if (other.CompareTag("FireLiquid"))
         {
             AddHalfFillAmount();
-            
+
             Color tint = myMaterial.GetColor("_Tint");
             Color newColor = new Color(
                 Mathf.MoveTowards(tint.r, 1f, redIncrement),
@@ -175,8 +174,8 @@ public class PotionStateManager : MonoBehaviour
                 Mathf.MoveTowards(tint.r, 0.7f, redIncrement),
                 Mathf.MoveTowards(tint.g, 0.8f, greenIncrement),
                 Mathf.MoveTowards(tint.b, 0.85f, blueIncrement)
-                
-                
+
+
             );
             myMaterial.SetColor("_Tint", newColor);
 
@@ -408,7 +407,7 @@ public class PotionStateManager : MonoBehaviour
                 isPoisonResistancePotion = false;
             }
             other.gameObject.SetActive(false);
-        } 
+        }
 
         //FIRE RESISTANCE
 
@@ -426,7 +425,7 @@ public class PotionStateManager : MonoBehaviour
             );
             myMaterial.SetColor("_Tint", newColor);
 
-            if (newColor.r > 0.9f && newColor.g > 0.4f && newColor.g < 0.6f && newColor.b > 0.45f && newColor.b < 0.6f )
+            if (newColor.r > 0.9f && newColor.g > 0.4f && newColor.g < 0.6f && newColor.b > 0.45f && newColor.b < 0.6f)
             {
                 isFireResistancePotion = true;
             }
@@ -439,10 +438,24 @@ public class PotionStateManager : MonoBehaviour
 
 
     }
+    /*
+    Doesn't work because the balls getactive.false... instead use list child spawned balls as detection
+
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.CompareTag("GrowthLiquid"))
+        {
+            LowerHalfFillAmount();
+        }
+    } */
 
     public void AddHalfFillAmount()
     {
         liquid.IncreaseFillAmount(amountThatFillsWithEveryBall);
-        
+
     }
+
+
 }

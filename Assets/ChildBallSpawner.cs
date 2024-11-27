@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class ChildBallSpawner : MonoBehaviour
 {
+    public Liquid liquid;
+    public float amountThatReleasesWithEveryBall; // Define this if not already defined
+
+
     public float spawnInterval = 2f; // the time interval between setting objects active
     public float checkInterval = 3f; // the time interval between checking for new children
     private List<Transform> childList = new List<Transform>();
@@ -28,6 +33,7 @@ public class ChildBallSpawner : MonoBehaviour
                     if (!childList[i].gameObject.activeSelf)
                     {
                         childList[i].gameObject.SetActive(true);
+                        LowerHalfFillAmount();
                         childList[i].position = transform.position;
 
                         yield return new WaitForSeconds(spawnInterval);
@@ -61,4 +67,17 @@ public class ChildBallSpawner : MonoBehaviour
             childList.Add(child);
         }
     }
+
+    public void LowerHalfFillAmount()
+    {
+        if (liquid != null) // Ensure liquid reference is valid
+        {
+            liquid.DecreaseFillAmount(amountThatReleasesWithEveryBall);
+        }
+
+    }
+
 }
+
+
+

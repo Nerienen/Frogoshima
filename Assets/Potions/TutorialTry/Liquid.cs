@@ -18,13 +18,13 @@ public class Liquid : MonoBehaviour
     float MaxWobble = 0.03f;
     [SerializeField]
     float WobbleSpeedMove = 1f;
-    
+
     public float fillAmount = 0.5f;
 
     public float GetFillAmount()
-{
-    return fillAmount;
-}
+    {
+        return fillAmount;
+    }
 
     [SerializeField]
     float Recovery = 1f;
@@ -208,6 +208,11 @@ public class Liquid : MonoBehaviour
     public void IncreaseFillAmount(float amount)
     {
         fillAmount += amount;
+    }
+
+    public void DecreaseFillAmount(float amount)
+    {
+        fillAmount -= amount;
     }
 
 }

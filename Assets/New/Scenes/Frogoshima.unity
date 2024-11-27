@@ -26217,8 +26217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffa9cde3d5ae1a43ba70b22a51363d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  liquid: {fileID: 0}
   fillAmount: 0.5
   amountThatFillsWithEveryBall: -0.1
+  amountThatReleasesWithEveryBall: 0.05
   redIncrement: 0.25
   greenIncrement: 0.25
   blueIncrement: 0.25
@@ -29321,6 +29323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff50b35ca58b48348abb0dee35379dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  liquid: {fileID: 8620821406623887977}
+  amountThatReleasesWithEveryBall: -0.05
   spawnInterval: 0.1
   checkInterval: 1.5
   openCorkScript: {fileID: 8652529421867288511}
@@ -75836,8 +75840,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffa9cde3d5ae1a43ba70b22a51363d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  liquid: {fileID: 0}
   fillAmount: 0
   amountThatFillsWithEveryBall: -0.1
+  amountThatReleasesWithEveryBall: 0.05
   redIncrement: 0.25
   greenIncrement: 0.25
   blueIncrement: 0.25
@@ -87958,8 +87964,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffa9cde3d5ae1a43ba70b22a51363d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  liquid: {fileID: 0}
   fillAmount: 0
   amountThatFillsWithEveryBall: -0.02
+  amountThatReleasesWithEveryBall: 0.05
   redIncrement: 0.25
   greenIncrement: 0.25
   blueIncrement: 0.25
