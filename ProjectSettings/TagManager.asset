@@ -27,6 +27,7 @@ TagManager:
   - MagicCoal
   - ScalingStopper
   - Coin
+  - GlueberryIngredient
   layers:
   - Default
   - TransparentFX
